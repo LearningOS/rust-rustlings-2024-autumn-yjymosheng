@@ -5,11 +5,10 @@
 */
 
 fn sort<T>(array: &mut [T])
-where
-    T: PartialOrd,
-{
-    for i in 0..array.len() {
-        for j in 0..array.len() - 1 - i {
+where T:PartialOrd,{
+    let len = array.len();
+    for i in 0..len {
+        for j in 0..len - 1 - i {
             if array[j] > array[j + 1] {
                 array.swap(j, j + 1);
             }
